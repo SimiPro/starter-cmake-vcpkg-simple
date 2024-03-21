@@ -15,6 +15,10 @@ project(starter-cmake-vcpkg)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # for clangd
 
+if (BUILD_TESTS) 
+    find_package(Catch2 CONFIG REQUIRED)
+    enable_testing()
+endif(BUILD_TESTS)
 
 add_subdirectory(libs)
 add_subdirectory(apps)

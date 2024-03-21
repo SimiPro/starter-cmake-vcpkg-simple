@@ -33,6 +33,13 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
             }
+        },
+        {
+            "name": "tests",
+            "hidden": true,
+            "cacheVariables": {
+                "BUILD_TESTS": "ON"
+            }
         }
     ]
 }

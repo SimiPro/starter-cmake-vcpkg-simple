@@ -47,6 +47,9 @@
           "ffmpeg"
         ],
         "platform": "osx"
+      },
+      {
+        "name": "catch2"
       }
     ],
     "overrides": [
