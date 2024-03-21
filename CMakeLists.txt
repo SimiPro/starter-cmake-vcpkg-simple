@@ -15,10 +15,6 @@ project(starter-cmake-vcpkg)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # for clangd
 
-# find cudatoolkit
-find_package(CUDAToolkit REQUIRED)
-message(STATUS "Found CUDA: ${CUDAToolkit_LIBRARY_DIR}")
-
 
 add_subdirectory(libs)
 add_subdirectory(apps)

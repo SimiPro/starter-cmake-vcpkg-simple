@@ -4,9 +4,7 @@
         {
             "name": "default",
             "hidden": true,
-            "cacheVariables": {
-                 
-            }, 
+            "cacheVariables": {},
             "environment": {
                 "CUDA_PATH": "/usr/local/cuda-12.3/"
             }

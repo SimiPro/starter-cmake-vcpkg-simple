@@ -22,8 +22,10 @@
         "name": "nlohmann-json",
         "version>=": "3.11.3"
       },
-      "glib",
-      "cudnn",
+      {
+        "name": "cudnn",
+        "platform": "linux"
+      },
       {
         "name": "opencv4",
         "version>=": "4.8.0#14",
@@ -35,6 +37,16 @@
           "dnn-cuda"
         ],
         "platform": "linux"
+      },
+      {
+        "name": "opencv4",
+        "version>=": "4.8.0#14",
+        "features": [
+          "contrib",
+          "dnn",
+          "ffmpeg"
+        ],
+        "platform": "osx"
       }
     ],
     "overrides": [
