@@ -1,0 +1,40 @@
+{
+    "version": 4,
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "cacheVariables": {
+                 
+            }, 
+            "environment": {
+                "CUDA_PATH": "/usr/local/cuda-12.3/"
+            }
+        },
+        {
+            "name": "ninja",
+            "generator": "Ninja",
+            "hidden": true,
+            "inherits": [
+                "default"
+            ],
+            "cacheVariables": {
+                "CMAKE_MAKE_PROGRAM": "ninja"
+            }
+        },
+        {
+            "name": "debug",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ]
+}

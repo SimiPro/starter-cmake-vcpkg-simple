@@ -1,0 +1,43 @@
+{
+    "name": "starter-cmake-vcpkg",
+    "version-string": "1.0.0",
+    "description": "",
+    "license": "MIT",
+    "builtin-baseline": "53bef8994c541b6561884a8395ea35715ece75db",
+    "vcpkg-configuration": {
+      "overlay-ports": [
+        "./vcpkg-ports"
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "spdlog",
+        "version>=": "1.12.0"
+      },
+      {
+        "name": "eigen3",
+        "version>=": "3.4.0#3"
+      },
+      {
+        "name": "nlohmann-json",
+        "version>=": "3.11.3"
+      },
+      "glib",
+      "cudnn",
+      {
+        "name": "opencv4",
+        "version>=": "4.8.0#14",
+        "features": [
+          "contrib",
+          "cuda",
+          "dnn",
+          "ffmpeg",
+          "dnn-cuda"
+        ],
+        "platform": "linux"
+      }
+    ],
+    "overrides": [
+        
+    ]
+  }
