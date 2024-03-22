@@ -1,58 +1,65 @@
 {
-    "name": "starter-cmake-vcpkg",
-    "version-string": "1.0.0",
-    "description": "",
-    "license": "MIT",
-    "builtin-baseline": "53bef8994c541b6561884a8395ea35715ece75db",
-    "vcpkg-configuration": {
-      "overlay-ports": [
-        "./vcpkg-ports"
+  "name": "starter-cmake-vcpkg",
+  "version-string": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "builtin-baseline": "53bef8994c541b6561884a8395ea35715ece75db",
+  "vcpkg-configuration": {
+    "overlay-ports": [
+      "./vcpkg-ports"
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "spdlog",
+      "version>=": "1.12.0"
+    },
+    {
+      "name": "eigen3",
+      "version>=": "3.4.0#3"
+    },
+    {
+      "name": "nlohmann-json",
+      "version>=": "3.11.3"
+    },
+    {
+      "name": "catch2"
+    }
+  ],
+  "features": {
+    "cuda": {
+      "description": "Enable CUDA support",
+      "dependencies": [
+        {
+          "name": "cudnn"
+        },
+        {
+          "name": "opencv4",
+          "version>=": "4.8.0#14",
+          "features": [
+            "contrib",
+            "cuda",
+            "dnn",
+            "ffmpeg",
+            "dnn-cuda"
+          ]
+        }
       ]
     },
-    "dependencies": [
-      {
-        "name": "spdlog",
-        "version>=": "1.12.0"
-      },
-      {
-        "name": "eigen3",
-        "version>=": "3.4.0#3"
-      },
-      {
-        "name": "nlohmann-json",
-        "version>=": "3.11.3"
-      },
-      {
-        "name": "cudnn",
-        "platform": "linux"
-      },
-      {
-        "name": "opencv4",
-        "version>=": "4.8.0#14",
-        "features": [
-          "contrib",
-          "cuda",
-          "dnn",
-          "ffmpeg",
-          "dnn-cuda"
-        ],
-        "platform": "linux"
-      },
-      {
-        "name": "opencv4",
-        "version>=": "4.8.0#14",
-        "features": [
-          "contrib",
-          "dnn",
-          "ffmpeg"
-        ],
-        "platform": "osx"
-      },
-      {
-        "name": "catch2"
-      }
-    ],
-    "overrides": [
-        
-    ]
-  }
+    "nocuda": {
+      "description": "Disable CUDA support",
+      "dependencies": [
+        {
+          "name": "opencv4",
+          "version>=": "4.8.0#14",
+          "features": [
+            "contrib",
+            "dnn",
+            "ffmpeg"
+          ]
+        }
+      ]
+    }
+  },
+  "overrides": []
+}
