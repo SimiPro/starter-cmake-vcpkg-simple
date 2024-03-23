@@ -32,6 +32,7 @@ jobs:
 
     - name: Echo the Test Secret
       run: echo "The secret is ${{ secrets.TEST_SECRET }}"
+      secrets: inherit
 
     
     - name: Configure AWS Credentials
