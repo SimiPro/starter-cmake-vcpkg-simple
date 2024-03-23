@@ -24,6 +24,7 @@ jobs:
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
+    environment: AWS Env
     
     steps:
     - uses: actions/checkout@v4
@@ -32,7 +33,7 @@ jobs:
 
     - name: Echo the Test Secret
       run: echo "The secret is ${{ secrets.TEST_SECRET }}"
-      secrets: inherit
+  
 
     
     - name: Configure AWS Credentials
@@ -41,7 +42,6 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-central-1
-      secrets: inherit
       
 
     - name: Update
