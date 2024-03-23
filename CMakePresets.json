@@ -1,13 +1,24 @@
 {
-    "version": 4,
+    "version": 6,
     "configurePresets": [
         {
             "name": "default",
             "hidden": true,
-            "cacheVariables": {},
+            "cacheVariables": {}
+        },
+        {
+            "name": "ci", 
+            "hidden": true,
+            "environment": {
+                "VCPKG_BINARY_SOURCES": "x-aws,s3://flink-ci-binary-cache/linux-cache/,readwrite"
+            }
+        },
+        {
+            "name": "cuda", 
+            "hidden": true,
             "environment": {
                 "CUDA_PATH": "/usr/local/cuda-12.3/",
-                "VCPKG_BINARY_SOURCES": "x-aws,s3://flink-ci-binary-cache/linux-cache/,readwrite"
+                "USE_CUDA": "ON"
             }
         },
         {
@@ -41,6 +52,24 @@
             "cacheVariables": {
                 "BUILD_TESTS": "ON"
             }
+        },
+        {
+            "name": "ci-ninja-release-tests",
+            "hidden": false,
+            "inherits": [
+                "ci",
+                "ninja",
+                "release",
+                "tests"
+            ]
         }
-    ]
+    ],
+    "buildPresets": [
+        {
+            "name": "ci-test-release",
+            "displayName" : "CI Test Release",
+            "configurePreset" : "ci-ninja-release-tests",
+            "configuration": "Release"
+        }
+      ]
 }
