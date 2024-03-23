@@ -11,11 +11,11 @@ FetchContent_MakeAvailable(vcpkg)
 
 
 option(USE_CUDA "Using CUDA" OFF)
-# if(USE_CUDA)
-#   list(APPEND VCPKG_MANIFEST_FEATURES "cuda")
-# else()
-#     list(APPEND VCPKG_MANIFEST_FEATURES "nocuda")
-# endif()
+if(USE_CUDA)
+  list(APPEND VCPKG_MANIFEST_FEATURES "cuda")
+else()
+    list(APPEND VCPKG_MANIFEST_FEATURES "nocuda")
+endif()
 
 set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "")
 
