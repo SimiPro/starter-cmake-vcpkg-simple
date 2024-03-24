@@ -1,0 +1,1 @@
+[![main](https://github.com/SimiPro/starter_cmake_vcpkg/actions/workflows/cmake-single-platform.yml/badge.svg?branch=master)](https://github.com/SimiPro/starter_cmake_vcpkge/actions/workflows/cmake-single-platform.yml)
